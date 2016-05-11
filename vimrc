@@ -17,6 +17,9 @@ Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'scrooloose/nerdcommenter'
 
 "All of your Plugins must be added before the following line
 call vundle#end()
@@ -293,11 +296,14 @@ autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 
 "git maps
 map <leader>b :Gblame<cr>
-map <leader>l :!clear && git log -p %<cr>
+map <leader>p :!clear && git log -p %<cr>
 map <leader>d :!clear && git diff %<cr>
 
 "remap bufexplorer
 nnoremap <leader>e :BufExplorer<cr>
+nnoremap <leader>n :NERDTreeToggle<cr>
+nnoremap <leader>m :NERDTreeFind<cr>
+nnoremap <leader>t :CtrlP<cr>
 
 "toggle class methods
 map <leader>l :TlistToggle<cr>
@@ -305,7 +311,7 @@ map <leader>l :TlistToggle<cr>
 "remove highlights with backspace
 map <BS> :nohls<CR>
 
-"Tab completion
+"tab completion
 "will insert tab at beginning of line,
 "will use completion if not at beginning
 set wildmode=list:longest,list:full
@@ -323,3 +329,6 @@ inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 "ctags
 set tags=./.tags;/
 nnoremap <leader>. :CtrlPTag<cr>
+
+"custom filetype settings
+"autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
