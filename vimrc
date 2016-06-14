@@ -269,6 +269,73 @@ function! s:Median(nums)
 endfunction
 
 "
+" Helpers
+"
+
+"jump to last cursor position when opening a file
+"dont do it when writing a commit log entry
+autocmd BufReadPost * call SetCursorPosition()
+function! SetCursorPosition()
+    if &filetype !~ 'svn\|commit\c'
+        if line("'\"") > 0 && line("'\"") <= line("$")
+            exe "normal! g`\""
+            normal! zz
+        endif
+    else
+        call cursor(1,1)
+    endif
+endfunction
+
+"spell check when writing commit logs
+autocmd filetype svn,*commit* setlocal spell
+
+"http://vimcasts.org/episodes/fugitive-vim-browsing-the-git-object-database/
+"hacks from above (the url, not jesus) to delete fugitive buffers when we
+"leave them - otherwise the buffer list gets poluted
+"
+"add a mapping on .. to view parent tree
+autocmd BufReadPost fugitive://* set bufhidden=delete
+autocmd BufReadPost fugitive://*
+  \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
+  \   nnoremap <buffer> .. :edit %:h<CR> |
+  \ endif
+
+"when copying/pasting from the term into :e from a git diff or rspec or
+"similar we edit things like
+"
+"./app/models/foo.rb:10:in
+"
+"Save the time of stripping trailing shit and just make this edit and go to
+"line 10.
+autocmd bufenter * call s:checkForLnum()
+function! s:checkForLnum() abort
+    let fname = expand("%:f")
+    if fname =~ ':\d\+\(:.*\)\?$'
+        let lnum = substitute(fname, '^.*:\(\d\+\)\(:.*\)\?$', '\1', '')
+        let realFname = substitute(fname, '^\(.*\):\d\+\(:.*\)\?$', '\1', '')
+        bwipeout
+        exec "edit " . realFname
+        doautocmd bufread
+        call cursor(lnum, 1)
+    endif
+endfunction
+
+"tab completion
+"will insert tab at beginning of line,
+"will use completion if not at beginning
+set wildmode=list:longest,list:full
+set complete=.,w,t
+function! InsertTabWrapper()
+  let col = col('.') - 1
+  if !col || getline('.')[col - 1] !~ '\k'
+    return "\<tab>"
+  else
+    return "\<c-p>"
+  endif
+endfunction
+inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
+
+"
 " Extras
 "
 
@@ -311,24 +378,14 @@ map <leader>l :TlistToggle<cr>
 "remove highlights with backspace
 map <BS> :nohls<CR>
 
-"tab completion
-"will insert tab at beginning of line,
-"will use completion if not at beginning
-set wildmode=list:longest,list:full
-set complete=.,w,t
-function! InsertTabWrapper()
-  let col = col('.') - 1
-  if !col || getline('.')[col - 1] !~ '\k'
-    return "\<tab>"
-  else
-    return "\<c-p>"
-  endif
-endfunction
-inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
-
 "ctags
 set tags=./.tags;/
 nnoremap <leader>. :CtrlPTag<cr>
 
 "custom filetype settings
 "autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
+
+"dont load csapprox if we no gui support - silences an annoying warning
+if !has("gui")
+  let g:CSApprox_loaded = 1
+endif
