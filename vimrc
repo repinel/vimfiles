@@ -20,6 +20,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'janko-m/vim-test'
 
 "All of your Plugins must be added before the following line
 call vundle#end()
@@ -370,7 +371,7 @@ map <leader>d :!clear && git diff %<cr>
 nnoremap <leader>e :BufExplorer<cr>
 nnoremap <leader>n :NERDTreeToggle<cr>
 nnoremap <leader>m :NERDTreeFind<cr>
-nnoremap <leader>t :CtrlP<cr>
+nnoremap <leader>f :CtrlP<cr>
 
 "toggle class methods
 map <leader>l :TlistToggle<cr>
@@ -389,3 +390,7 @@ nnoremap <leader>. :CtrlPTag<cr>
 if !has("gui")
   let g:CSApprox_loaded = 1
 endif
+
+"test shortcuts
+nnoremap <leader>t :TestFile<cr>
+nnoremap <leader>r :TestNearest<cr>
