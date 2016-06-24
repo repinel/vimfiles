@@ -20,6 +20,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'Valloric/MatchTagAlways'
 Plugin 'janko-m/vim-test'
 
 "All of your Plugins must be added before the following line
@@ -383,9 +384,6 @@ map <BS> :nohls<CR>
 set tags=./.tags;/
 nnoremap <leader>. :CtrlPTag<cr>
 
-"custom filetype settings
-"autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
-
 "dont load csapprox if we no gui support - silences an annoying warning
 if !has("gui")
   let g:CSApprox_loaded = 1
@@ -394,3 +392,12 @@ endif
 "test shortcuts
 nnoremap <leader>t :TestFile<cr>
 nnoremap <leader>r :TestNearest<cr>
+
+"disable arrow keys for normal mode
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+
+"custom filetype settings
+"autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
