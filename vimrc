@@ -11,6 +11,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 "plugins list
+Plugin 'godlygeek/csapprox'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'kien/ctrlp.vim'
 Plugin 'rking/ag.vim'
