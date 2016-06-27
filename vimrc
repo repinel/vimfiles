@@ -13,7 +13,7 @@ Plugin 'gmarik/Vundle.vim'
 "plugins list
 Plugin 'godlygeek/csapprox'
 Plugin 'jlanzarotta/bufexplorer'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-scripts/taglist.vim'
@@ -23,6 +23,7 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Valloric/MatchTagAlways'
 Plugin 'janko-m/vim-test'
+Plugin 'ap/vim-buftabline'
 
 "All of your Plugins must be added before the following line
 call vundle#end()
@@ -369,11 +370,11 @@ map <leader>b :Gblame<cr>
 map <leader>p :!clear && git log -p %<cr>
 map <leader>d :!clear && git diff %<cr>
 
-"remap bufexplorer
+"remaps
 nnoremap <leader>e :BufExplorer<cr>
 nnoremap <leader>n :NERDTreeToggle<cr>
 nnoremap <leader>m :NERDTreeFind<cr>
-nnoremap <leader>f :CtrlP<cr>
+let g:ctrlp_map = '<leader>f'
 
 "toggle class methods
 map <leader>l :TlistToggle<cr>
@@ -393,6 +394,10 @@ endif
 "test shortcuts
 nnoremap <leader>t :TestFile<cr>
 nnoremap <leader>r :TestNearest<cr>
+
+" previous and next buffers
+nnoremap <C-N> :bnext<CR>
+nnoremap <C-P> :bprev<CR>
 
 "disable arrow keys for normal mode
 map <up> <nop>
