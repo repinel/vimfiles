@@ -343,6 +343,11 @@ inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 " Extras
 "
 
+"ignore some folders and files for CtrlP indexing
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.idea$\|\.sass-cache$\|\.hg$\|\.svn$\|\.yardoc\|public$\|log\|tmp$',
+  \ 'file': '\.so$\|\.dat$\|\.DS_Store$\|\.tags$' }
+
 "split screen navigation
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
