@@ -21,7 +21,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'Valloric/MatchTagAlways'
 Plugin 'janko-m/vim-test'
 Plugin 'ap/vim-buftabline'
 
