@@ -411,5 +411,8 @@ map <down> <nop>
 map <left> <nop>
 map <right> <nop>
 
+"delete current file and buffer
+command DeleteMe :call delete(expand('%')) | bdelete!
+
 "custom filetype settings
 "autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
