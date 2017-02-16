@@ -415,3 +415,5 @@ command DeleteMe :call delete(expand('%')) | bdelete!
 
 "custom filetype settings
 "autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
+autocmd BufNewFile,BufRead *.git/config,.gitconfig,.gitmodules setlocal noexpandtab ts=4 sts=4 sw=4
+
