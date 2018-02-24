@@ -23,6 +23,7 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'janko-m/vim-test'
 Plugin 'ap/vim-buftabline'
+Plugin 'vim-flake8'
 
 "All of your Plugins must be added before the following line
 call vundle#end()
@@ -369,6 +370,9 @@ autocmd BufWritePre * :%s/\s\+$//e
 "set text with for *.md files
 autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 
+"check Python PEP8 style
+autocmd BufWritePost *.py call Flake8()
+
 "git maps
 map <leader>b :Gblame<cr>
 map <leader>p :!clear && git log -p %<cr>
@@ -410,10 +414,14 @@ map <down> <nop>
 map <left> <nop>
 map <right> <nop>
 
+"disable Ex mode
+nnoremap Q <nop>
+
 "delete current file and buffer
 command DeleteMe :call delete(expand('%')) | bdelete!
 
 "custom filetype settings
 "autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
+autocmd Filetype go setlocal ts=4 sts=4 sw=4 | set expandtab!
 autocmd BufNewFile,BufRead *.git/config,.gitconfig,.gitmodules setlocal noexpandtab ts=4 sts=4 sw=4
 
