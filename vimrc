@@ -371,7 +371,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 
 "check Python PEP8 style
-autocmd BufWritePost *.py call Flake8()
+"autocmd BufWritePost *.py call Flake8()
 
 "git maps
 map <leader>b :Gblame<cr>
@@ -419,6 +419,11 @@ nnoremap Q <nop>
 
 "delete current file and buffer
 command DeleteMe :call delete(expand('%')) | bdelete!
+
+"fix syntax highlighting
+noremap <C-Y> <Esc>:syntax sync fromstart<CR>
+
+" %!python -m json.tool
 
 "custom filetype settings
 "autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
