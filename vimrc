@@ -24,6 +24,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'janko-m/vim-test'
 Plugin 'ap/vim-buftabline'
 Plugin 'vim-flake8'
+Plugin 'posva/vim-vue'
 
 "All of your Plugins must be added before the following line
 call vundle#end()
@@ -403,7 +404,7 @@ endif
 nnoremap <leader>t :TestFile<cr>
 nnoremap <leader>r :TestNearest<cr>
 
-" previous and next buffers
+"previous and next buffers
 nnoremap <C-N> :bnext<CR>
 nnoremap <C-P> :bprev<CR>
 nnoremap <leader>w :bufdo bd<CR>
@@ -430,3 +431,23 @@ noremap <C-Y> <Esc>:syntax sync fromstart<CR>
 autocmd Filetype go setlocal ts=4 sts=4 sw=4 | set expandtab!
 autocmd BufNewFile,BufRead *.git/config,.gitconfig,.gitmodules setlocal noexpandtab ts=4 sts=4 sw=4
 
+"allow comments in Vue files
+let g:ft = ''
+function! NERDCommenter_before()
+  if &ft == 'vue'
+    let g:ft = 'vue'
+    let stack = synstack(line('.'), col('.'))
+    if len(stack) > 0
+      let syn = synIDattr((stack)[0], 'name')
+      if len(syn) > 0
+        exe 'setf ' . substitute(tolower(syn), '^vue_', '', '')
+      endif
+    endif
+  endif
+endfunction
+function! NERDCommenter_after()
+  if g:ft == 'vue'
+    setf vue
+    let g:ft = ''
+  endif
+endfunction
