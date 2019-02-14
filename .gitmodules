@@ -23,7 +23,7 @@
 	path = pack/colorschemes/start/csapprox
 	url = https://github.com/godlygeek/csapprox.git
 [submodule "pack/git/vim-fugitive"]
-	path = pack/git/vim-fugitive
+	path = pack/git/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
 [submodule "pack/nerd/nerdcommenter"]
 	path = pack/nerd/start/nerdcommenter
