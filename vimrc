@@ -424,7 +424,8 @@ command DeleteMe :call delete(expand('%')) | bdelete!
 "fix syntax highlighting
 noremap <C-Y> <Esc>:syntax sync fromstart<CR>
 
-" %!python -m json.tool
+"format JSON files
+command FormatJSON %!python -m json.tool
 
 "custom filetype settings
 "autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
