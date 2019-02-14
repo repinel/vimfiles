@@ -1,3 +1,42 @@
-[submodule "bundle/Vundle.vim"]
-	path = bundle/Vundle.vim
-	url = https://github.com/VundleVim/Vundle.vim.git
+[submodule "pack/basic/vim-surround"]
+	path = pack/basic/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "pack/basic/vim-buftabline"]
+	path = pack/basic/vim-buftabline
+	url = https://github.com/ap/vim-buftabline.git
+[submodule "pack/basic/ag.vim"]
+	path = pack/basic/ag.vim
+	url = https://github.com/rking/ag.vim.git
+[submodule "pack/basic/bufexplorer"]
+	path = pack/basic/bufexplorer
+	url = https://github.com/jlanzarotta/bufexplorer.git
+[submodule "pack/basic/ctrlp.vim"]
+	path = pack/basic/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "pack/basic/taglist.vim"]
+	path = pack/basic/taglist.vim
+	url = https://github.com/vim-scripts/taglist.vim
+[submodule "pack/basic/vim-test"]
+	path = pack/basic/vim-test
+	url = https://github.com/janko-m/vim-test
+[submodule "pack/colorschemes/csapprox"]
+	path = pack/colorschemes/csapprox
+	url = https://github.com/godlygeek/csapprox.git
+[submodule "pack/git/vim-fugitive"]
+	path = pack/git/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "pack/nerd/nerdcommenter"]
+	path = pack/nerd/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter
+[submodule "pack/nerd/nerdtree"]
+	path = pack/nerd/nerdtree
+	url = https://github.com/scrooloose/nerdtree
+[submodule "pack/nerd/nerdtree-git-plugin"]
+	path = pack/nerd/nerdtree-git-plugin
+	url = https://github.com/Xuyuanp/nerdtree-git-plugin
+[submodule "pack/python/vim-flake8"]
+	path = pack/python/vim-flake8
+	url = https://github.com/vim-scripts/vim-flake8
+[submodule "pack/syntax/vim-vue"]
+	path = pack/syntax/vim-vue
+	url = https://github.com/posva/vim-vue

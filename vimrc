@@ -2,32 +2,32 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 "set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+"set rtp+=~/.vim/bundle/Vundle.vim
+"call vundle#begin()
 "alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
 "let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+"Plugin 'gmarik/Vundle.vim'
 
 "plugins list
-Plugin 'godlygeek/csapprox'
-Plugin 'jlanzarotta/bufexplorer'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'rking/ag.vim'
-Plugin 'tpope/vim-surround'
-Plugin 'vim-scripts/taglist.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'janko-m/vim-test'
-Plugin 'ap/vim-buftabline'
-Plugin 'vim-flake8'
-Plugin 'posva/vim-vue'
+"Plugin 'godlygeek/csapprox'
+"Plugin 'jlanzarotta/bufexplorer'
+"Plugin 'ctrlpvim/ctrlp.vim'
+"Plugin 'rking/ag.vim'
+"Plugin 'tpope/vim-surround'
+"Plugin 'vim-scripts/taglist.vim'
+"Plugin 'tpope/vim-fugitive'
+"Plugin 'scrooloose/nerdtree'
+"Plugin 'Xuyuanp/nerdtree-git-plugin'
+"Plugin 'scrooloose/nerdcommenter'
+"Plugin 'janko-m/vim-test'
+"Plugin 'ap/vim-buftabline'
+"Plugin 'vim-flake8'
+"Plugin 'posva/vim-vue'
 
 "All of your Plugins must be added before the following line
-call vundle#end()
+"call vundle#end()
 
 "allow backspacing over everything in insert mode
 set backspace=indent,eol,start
