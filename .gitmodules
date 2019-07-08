@@ -4,9 +4,6 @@
 [submodule "pack/basic/vim-buftabline"]
 	path = pack/basic/start/vim-buftabline
 	url = https://github.com/ap/vim-buftabline.git
-[submodule "pack/basic/ag.vim"]
-	path = pack/basic/start/ag.vim
-	url = https://github.com/rking/ag.vim.git
 [submodule "pack/basic/bufexplorer"]
 	path = pack/basic/start/bufexplorer
 	url = https://github.com/jlanzarotta/bufexplorer.git
@@ -40,3 +37,6 @@
 [submodule "pack/syntax/vim-vue"]
 	path = pack/syntax/start/vim-vue
 	url = https://github.com/posva/vim-vue
+[submodule "pack/basic/start/vim-ripgrep"]
+	path = pack/basic/start/vim-ripgrep
+	url = https://github.com/jremmen/vim-ripgrep
