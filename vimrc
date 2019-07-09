@@ -1,6 +1,9 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+"enable fzf plugin
+set rtp+=/usr/local/opt/fzf
+
 "allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
@@ -355,7 +358,7 @@ map <leader>d :!clear && git diff %<cr>
 nnoremap <leader>e :BufExplorer<cr>
 nnoremap <leader>n :NERDTreeToggle<cr>
 nnoremap <leader>m :NERDTreeFind<cr>
-let g:ctrlp_map = '<leader>f'
+map <leader>f :FZF<cr>
 
 "toggle class methods
 map <leader>l :TlistToggle<cr>
