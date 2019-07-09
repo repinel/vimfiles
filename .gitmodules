@@ -7,9 +7,6 @@
 [submodule "pack/basic/bufexplorer"]
 	path = pack/basic/start/bufexplorer
 	url = https://github.com/jlanzarotta/bufexplorer.git
-[submodule "pack/basic/ctrlp.vim"]
-	path = pack/basic/start/ctrlp.vim
-	url = https://github.com/ctrlpvim/ctrlp.vim.git
 [submodule "pack/basic/taglist.vim"]
 	path = pack/basic/start/taglist.vim
 	url = https://github.com/vim-scripts/taglist.vim
