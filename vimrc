@@ -68,7 +68,7 @@ colorscheme railscasts
 set hidden
 
 "use the system clipboard
-set clipboard=unnamed
+set clipboard^=unnamed,unnamedplus
 
 set encoding=utf-8
 
