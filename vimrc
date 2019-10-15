@@ -325,7 +325,7 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-"silver searcher
+"RipGrep searcher
 map <leader>a :Rg<space>
 
 "tab or shift+tab in visual mode
